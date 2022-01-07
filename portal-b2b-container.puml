@@ -1,0 +1,53 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/master/dist 
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/AzureC4Integration.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Databases/AzureSqlDatabase.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/angular.puml
+
+SHOW_PERSON_OUTLINE()
+
+title "Diagrama de Container para o Novo Portal B2B"
+
+Person_Ext(user, "Usuário/Cliente Potencial", "Pessoa que navega pelo portal e consome conteúdos publicados")
+
+Person(admin, "Publicador de conteúdo", "Pessoa que gerencia e publica conteúdos")
+
+Container_Boundary(c1, "Portal B2B") {
+  Container(umbraco, "Portal B2B", "C#, ASP.NET MVC e Umbraco", "Interface onde o cliente navega pelos conteúdos publicados e interage com os formulários", "AzureWebApp")
+  Container(umbraco_admin, "Portal B2B Admin", "C#, ASP.NET MVC e Umbraco", "Back-end para interação com a aplicação SPA disponível apenas na rede interna da EDP", "AzureWebApp")
+  Container(spa, "Single-Page App Admin", "AngularJS", "Interface onde o usuário gerenciará a arquitetura/design e conteúdo do portal disponível apenas na rede interna da EDP", "angular")
+  ContainerDb(db, "Banco de Dados", "Microsoft SQL", "Armazena os metadados de configuração do Umbraco e os conteúdos publicados no portal", "AzureSqlDatabase")
+  Container(storage, "Blob Storage", "BLOB", "Armazenamento de conteúdo estático (imagens, vídeos, ícones, etc)", "AzureBlobStorage")
+}
+
+Container_Ext(apismart, "API Smartsite", "Provê informações para registro de atendimento", "", "AzureWebApp")
+Container_Ext(apisolar, "API Solar", "Provê simulação de economia de energia", "", "AzureWebApp")
+Container_Ext(apicliente, "API ClientePotencial", "Provê entrypoint para cadastrar o cliente potencial", "", "AzureWebApp")
+System_Ext(apiviacep, "API ViaCEP", "Sistema de consulta de CEPs e endereços", "AzureWebApp")
+
+Rel(user, umbraco, "Lê conteúdo de", "https")
+Rel(admin, umbraco_admin, "Uses", "https")
+Rel_Neighbor(umbraco_admin, spa, "Entrega")
+Rel(admin, spa, "Uses", "https")
+BiRel(umbraco_admin, db, "Lê e grava conteúdo e metadados")
+BiRel(umbraco_admin, storage, "Lê e grava mídias estáticas")
+Rel(umbraco, db, "Lê conteúdo de")
+Rel(umbraco, storage, "Lê imagens/vídeos de")
+
+Rel_R(umbraco, apiviacep, "Consome", "https/json")
+Rel(umbraco, apismart, "Consome", "https/json")
+Rel_D(umbraco, apisolar, "Consome", "https/json")
+Rel_D(umbraco, apicliente, "Consome", "https/json")
+
+Lay_D(apicliente,apismart)
+Lay_R(apisolar,apismart)
+
+SHOW_LEGEND()
+@enduml
