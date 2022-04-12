@@ -5,7 +5,7 @@
 
 - [https://www.diagrams.net/](https://www.diagrams.net/)
 - [https://www.plantuml.com/](https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000)
-- VS Code
+- [VS Code](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
 - [C4-Builder](https://github.com/adrianvlupu/C4-Builder)
 
 
@@ -26,9 +26,9 @@ Crie ou abra um arquivo com a extesão *.puml
 
 Teclas de atalho:
 
-ALT + D para ter uma pré visualização
+`ALT + D` para ter uma pré visualização
 
-CTRL + SHIFT + P e selecione a opção para exportar a imagem ou pré visualização.
+`CTRL + SHIFT + P` e selecione a opção para exportar a imagem ou pré visualização.
 
 
 ## Referências
