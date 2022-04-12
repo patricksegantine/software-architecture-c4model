@@ -1,4 +1,4 @@
-﻿# Software Architecture using C4 Model
+﻿# O modelo C4 para visualizar a arquitetura de software
 
 O modelo C4 é uma abordagem fácil de aprender e amigável ao desenvolvedor para diagramação de arquitetura de software. Bons diagramas de arquitetura de software auxiliam na comunicação dentro/fora das equipes de desenvolvimento/produto de software, integração eficiente de novos funcionários, revisões/avaliações de arquitetura, identificação de riscos, etc. [https://c4model.com/](https://c4model.com/)
 
