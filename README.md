@@ -22,10 +22,12 @@ Instalação no sistema operacional Ubuntu:
 sudo apt-get install graphviz openjdk-17-jre
 ```
 
-Crie o arquivo e salve com a extesão *.puml
+Crie ou abra um arquivo com a extesão *.puml
 
 Teclas de atalho:
+
 ALT + D para ter uma pré visualização
+
 CTRL + SHIFT + P e selecione a opção para exportar a imagem ou pré visualização.
 
 
