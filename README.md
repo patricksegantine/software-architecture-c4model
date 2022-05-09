@@ -43,6 +43,7 @@ Teclas de atalho:
 
 [https://github.com/cassiobotaro/modeloC4](https://github.com/cassiobotaro/modeloC4)
 
+[https://github.com/plantuml-stdlib/C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML)
 
 ## Vídeos
 
