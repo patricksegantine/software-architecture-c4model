@@ -41,9 +41,15 @@ Teclas de atalho:
 
 [Explicitando os Componentes de um Contêiner usando C4 Model](https://eximia.co/explicitando-os-componentes-de-um-conteiner-usando-c4-model/)
 
+[Create C4 models and diagrams](https://www.diagrams.net/blog/c4-modelling)
+
+
+## Repositórios
+
 [https://github.com/cassiobotaro/modeloC4](https://github.com/cassiobotaro/modeloC4)
 
-[https://github.com/plantuml-stdlib/C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML)
+[https://github.com/plantuml-stdlib/C4-PlantUML (ENG)](https://github.com/plantuml-stdlib/C4-PlantUML)
+
 
 ## Vídeos
 
@@ -51,4 +57,4 @@ Teclas de atalho:
 
 [Botaro Cássio no Youtube - Documentação para Arquitetura de Software](https://www.youtube.com/watch?v=tx1O55Aq1CA)
 
-[Modelling: C4 modeling](https://www.youtube.com/watch?v=4XWShUGa0iU)
+[Modelling: C4 modeling (ENG)](https://www.youtube.com/watch?v=4XWShUGa0iU)
